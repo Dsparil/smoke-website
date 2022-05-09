@@ -16,20 +16,22 @@ Muertissima - Shows
 </div>
 <div class="row">
     <div class="col text-center">
-        <a class="btn btn-lg btn-floating" style="background-color: #3b5998;" href="https://www.facebook.com/Muertissima.officiel/" role="button">
+        <a class="btn btn-lg btn-floating" style="background-color: #3b5998;" href="https://www.facebook.com/smoke.official95/" role="button">
             <i class="fab fa-facebook-f"></i>
         </a>
     </div>
     <div class="col text-center">
-        <a class="btn btn-lg btn-floating" style="background-color: #ac2bac;" href="https://www.instagram.com/muertissima/" role="button">
+        <a class="btn btn-lg btn-floating" style="background-color: #ac2bac;" href="https://www.instagram.com/SMOKE_OFFICIAL95/" role="button">
             <i class="fab fa-instagram"></i>
         </a>
     </div>
+    <!--
     <div class="col text-center">
-        <a class="btn btn-lg btn-floating" style="background-color: #ed302f;" href="https://www.youtube.com/channel/UCyYdMaPiqEB_4rwLAJ8av0w" role="button">
+        <a class="btn btn-lg btn-floating" style="background-color: #ed302f;" href="" role="button">
             <i class="fab fa-youtube"></i>
         </a>
     </div>
+    -->
 </div>
 <div class="row">
     <div class="col text-center my-5">
