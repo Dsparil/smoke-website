@@ -4,7 +4,7 @@ html {
 
 body {
     background-color: #000;
-    background-image: url('../images/muertissima_body.jpg');
+    background-image: url('../images/smoke_body.jpg');
     @media (max-width: 430px) {
         background-image: none !important;
     }
@@ -43,7 +43,7 @@ div.post-noseparator {
 }
 
 .navBackground {
-    background-image: url('../images/muertissima_nav.jpg');
+    background-image: url('../images/smoke_nav.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 60%;
@@ -59,11 +59,11 @@ div#navissima {
             margin-right: 0.3em;
 
             .active {
-                color: #f1c232 !important;
+                color: #32f14b83 !important;
             }
 
             a.nav-link:hover {
-                color: rgba(241, 194, 50, 0.75) !important;
+                color: rgba(82, 241, 50, 0.822) !important;
             }
         }
     }

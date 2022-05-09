@@ -14,7 +14,7 @@ class Quote extends Model
 
     protected $table = 'quotes';
 
-    public static function random(): self
+    public static function random(): ?self
     {
         return self::inRandomOrder()->first();
     }
