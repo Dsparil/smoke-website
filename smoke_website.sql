@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `smoke_website`
 --
-CREATE DATABASE IF NOT EXISTS `smoke_website` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS `smoke_website` DEFAULT CHARACTER SET utf8mb4;
 USE `smoke_website`;
 
 -- --------------------------------------------------------
@@ -37,17 +37,16 @@ CREATE TABLE IF NOT EXISTS `band_members` (
   `instruments` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `band_members`
 --
 
 INSERT INTO `band_members` (`id`, `name`, `instruments`, `created_at`) VALUES
-(8, 'Matthias', 'Guitare lead', '2022-01-20 22:33:10'),
-(7, 'Cédric', 'Batterie', '2022-01-20 22:33:10'),
-(6, 'Simon', 'Basse / Chant', '2022-01-20 22:32:24'),
-(9, 'Stéphane', 'Guitare rythmique', '2022-01-20 22:33:10');
+(8, 'Zitoune', 'Guitare', '2022-01-20 22:33:10'),
+(7, 'Cédrico', 'Batterie', '2022-01-20 22:33:10'),
+(6, 'Gévaudan', 'Basse / Chant', '2022-01-20 22:32:24');
 
 -- --------------------------------------------------------
 
@@ -64,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `datasheet` (
   `languages` varchar(100) NOT NULL,
   `scenePlanData` json DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `datasheet`
@@ -88,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `patchlist` (
   `microphone_type` varchar(50) NOT NULL,
   `microphone_stand_size` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `patchlist`
@@ -104,13 +103,10 @@ INSERT INTO `patchlist` (`id`, `input_number`, `band_member_id`, `instrument_nam
 (7, 7, 7, 'Tom 2', 'E604 / Audix D2', 'Non (pince)'),
 (8, 8, 7, 'OH-L', 'SM81', 'Grand'),
 (9, 9, 7, 'OH-R', 'SM81', 'Grand'),
-(10, 10, 6, 'Basse 1', 'DI', 'Non'),
+(10, 10, 6, 'Basse 1', 'MD421 / BETA52', 'Petit'),
 (11, 11, 6, 'Basse 2', 'MD421 / BETA52', 'Petit'),
-(12, 12, 9, 'Guitare 1', 'DI - XLR', 'Non'),
-(13, 13, 9, 'Guitare 2', 'E906', 'Non'),
-(14, 14, 8, 'Guitare 1', 'DI - XLR', 'Non'),
-(15, 15, 8, 'Guitare 2', 'SM57', 'Petit'),
-(16, 16, 6, 'Chant', 'SM57 (fourni)', 'Grand');
+(12, 12, 8, 'Guitare', 'E906', 'Non'),
+(13, 13, 6, 'Chant', 'SM57 (fourni)', 'Grand');
 
 -- --------------------------------------------------------
 
@@ -124,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `rider` (
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `rider`
@@ -153,9 +149,9 @@ CREATE TABLE IF NOT EXISTS `scene_plan_items` (
   `code` varchar(20) NOT NULL,
   `name` varchar(30) NOT NULL,
   `dimensions` varchar(7) NOT NULL,
-  `image` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `image` longtext CHARACTER SET utf8mb4,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `scene_plan_items`
@@ -206,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `stuff` (
   `instrument_name` varchar(255) DEFAULT NULL,
   `content` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `stuff`
@@ -232,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `stuff_sections` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `stuff_sections`
@@ -241,6 +237,15 @@ CREATE TABLE IF NOT EXISTS `stuff_sections` (
 INSERT INTO `stuff_sections` (`id`, `name`) VALUES
 (1, 'Matériel apporté par le groupe'),
 (2, 'Matériel à fournir');
+
+
+CREATE TABLE `quotes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `text` text NOT NULL,
+  `author` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
