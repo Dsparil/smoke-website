@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('title')
-Muertissima - About us
+SMOKE - About us
 @endsection
 
 @section('meta-description')
-<meta name="description" content="À propos de Muertissima, bio, membres, partenaires" />
+<meta name="description" content="À propos de SMOKE, bio, membres, partenaires" />
 @endsection
 
 @section('content')
@@ -52,6 +52,7 @@ Muertissima - About us
     </div>
     @endforeach
 </div>
+<!--
 <div class="row mt-2">
     <div class="col">
         <h1>Liens externes</h1>
@@ -59,8 +60,9 @@ Muertissima - About us
 </div>
 <div class="row">
     <div class="col">
-        <a href="https://www.spirit-of-metal.com/fr/band/Muertissima">Muertissima sur Spirit of Metal</a>
+        <a href=""></a>
     </div>
 </div>
+-->
 
 @endsection

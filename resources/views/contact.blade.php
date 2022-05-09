@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-Muertissima - Shows
+SMOKE - Shows
 @endsection
 
 @section('meta-description')
