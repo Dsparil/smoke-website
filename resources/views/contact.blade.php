@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('title')
-SMOKE - Shows
+SMOKE - Contact
 @endsection
 
 @section('meta-description')
-<meta name="description" content="Contacter Muertissima, email, réseaux sociaux" />
+<meta name="description" content="Contacter SMOKE, email, réseaux sociaux" />
 @endsection
 
 @section('content')

@@ -3,6 +3,8 @@ html {
 }
 
 body {
+    font-family: "Arima Madurai";
+    font-size: 1rem;
     background-color: #000;
     background-image: url('../images/smoke_body.jpg');
     @media (max-width: 430px) {
@@ -49,11 +51,18 @@ div.post-noseparator {
     background-position: 0 60%;
 }
 
-div#navissima {
+span.more {
+    display: none;
+}
+
+div#smoke-nav {
     ul {
         li.nav-item {
-            font-weight: bold;
-            font-size: 1rem;
+            line-height: 22px;
+            height: 38px;
+            font-family: Smokum;
+            /* font-weight: bold; */
+            font-size: 1.5rem;
             background-color: rgba(0, 0, 0, 0.8) !important;
             border-radius: 20px;
             margin-right: 0.3em;

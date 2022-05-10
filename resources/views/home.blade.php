@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('title')
-Muertissima
+SMOKE
 @endsection
 
 @section('meta-description')
-<meta name="description" content="Muertissima est un groupe de Death Metal de la région parisienne, qui allie phases Black et Thrash afin de donner une sonorité Old school efficace et originale à leur musique" />
+<meta name="description" content="SMOKE est un groupe de post-stoner de la région parisienne." />
 @endsection
 
 @section('content')

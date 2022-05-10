@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-Muertissima - Photos
+SMOKE - Photos
 @endsection
 
 @section('meta-description')

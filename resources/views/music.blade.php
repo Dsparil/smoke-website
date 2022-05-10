@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('title')
-Muertissima - Music
+SMOKE - Music
 @endsection
 
 @section('meta-description')
-<meta name="description" content="Musique de Muertissima, vidéos, lives" />
+<meta name="description" content="Musique de SMOKE, vidéos, lives" />
 @endsection
 
 @section('content')

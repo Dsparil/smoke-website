@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{FBPost, Quote};
+use App\Models\{FBEvent, FBPost, Quote};
 use App\Helpers\{GraphHelper, PartnersHelper};
 use Illuminate\Support\Collection;
 
@@ -63,9 +63,9 @@ class HomeController extends Controller
     public function shows(Request $request)
     {
         return view('shows', [
-            'quote' => Quote::random(),
-            'page'  => 'shows',
-            'posts' => FBPost::hydrateFromSource($this->getPosts(), 'isDisplayableEvent')
+            'quote'  => Quote::random(),
+            'page'   => 'shows',
+            'events' => FBEvent::hydrateFromSource($this->getEvents())
         ]);
     }
 
@@ -78,5 +78,16 @@ class HomeController extends Controller
         }
 
         return $posts;
+    }
+
+    private function getEvents(): Collection
+    {
+        $events = GraphHelper::getEvents();
+
+        if ($events === null) {
+            abort(500, 'Erreur dans la récupération des données.');
+        }
+
+        return $events;
     }
 }

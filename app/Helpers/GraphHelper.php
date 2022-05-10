@@ -12,8 +12,6 @@ class GraphHelper
 
     public static $token;
 
-    public static $recursionLimit = null;
-
     private static $apiUrl = 'https://graph.facebook.com/v12.0/';
 
     private static $cacheTTL = 2 * 3600;
@@ -49,6 +47,10 @@ class GraphHelper
         ]);
 
         $url      = self::addToken(self::$apiUrl.'/'.self::$pageId.'/posts?fields='.$fields);
+
+        dump($url);
+        dump(Http::get($customUrl ?? $url)->body());
+
         $response = (Http::get($customUrl ?? $url))->object();
 
         if (isset($response->error) || !isset($response->data)) {
@@ -64,6 +66,35 @@ class GraphHelper
         Cache::put('posts', $posts, self::$cacheTTL);
 
         return $posts;
+    }
+
+    public static function getEvents(string $customUrl = null): ?Collection
+    {
+        if (Cache::has('events')) {
+            return Cache::get('events');
+        }
+
+        $fields = self::buildFields([
+            'place{name}',
+            'name',
+            'description',
+            'cover{source}',
+            'created_time',
+            'start_time',
+        ]);
+
+        $url      = self::addToken(self::$apiUrl.'/'.self::$pageId.'/events?fields='.$fields);
+        $response = (Http::get($customUrl ?? $url))->object();
+
+        $events = collect($response->data);
+
+        if (isset($response->paging->next)) {
+            $events = $events->merge(self::getEvents($response->paging->next));
+        }
+
+        Cache::put('events', $events, self::$cacheTTL);
+
+        return $events;
     }
 
     private static function buildFields(array $fields): string

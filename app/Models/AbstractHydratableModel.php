@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 
 abstract class AbstractHydratableModel extends Model
 {
-    public static function hydrateFromSource(Collection $data, string $callback = null): Collection
+    public static function hydrateFromSource(Collection $data, string $filterCallback = null): Collection
     {
         $items     = new Collection();
         $itemClass = get_called_class();
@@ -15,7 +15,7 @@ abstract class AbstractHydratableModel extends Model
         foreach ($data as $item) {
             $item = new $itemClass($item);
 
-            if ($callback !== null && !$item->$callback()) {
+            if ($filterCallback !== null && !$item->$filterCallback()) {
                 continue;
             }
 

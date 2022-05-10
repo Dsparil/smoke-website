@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('title')
-Muertissima - Merch
+SMOKE - Merch
 @endsection
 
 @section('meta-description')
-<meta name="description" content="Merchandising de Muertissima, acheter sur Bandcamp" />
+<meta name="description" content="Merchandising de SMOKE, acheter sur Bandcamp" />
 @endsection
 
 @section('content')

@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('title')
-Muertissima - Photos
+SMOKE - Photos
 @endsection
 
 @section('meta-description')
-<meta name="description" content="Interviews de Muertissima" />
+<meta name="description" content="Interviews de SMOKE" />
 @endsection
 
 @section('content')

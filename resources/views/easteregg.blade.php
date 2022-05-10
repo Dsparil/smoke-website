@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-Muertissima - EASTER MF EGG
+SMOKE - EASTER MF EGG
 @endsection
 
 @section('content')
